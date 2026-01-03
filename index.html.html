@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ToolsHub – Free Online Tools</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ToolsHub provides free online tools for images, PDFs and text. No signup, no upload, 100% browser based.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yourdomain.com/">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
+body{
+background:linear-gradient(-45deg,#2563eb,#7c3aed,#06b6d4,#22c55e);
+background-size:400% 400%;
+animation:bg 18s ease infinite;
+color:#0f172a;
+line-height:1.7
+}
+@keyframes bg{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+.container{max-width:1200px;margin:auto;padding:20px}
+
+/* HEADER */
+header{background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 4px 25px rgba(0,0,0,.12)}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:28px;font-weight:800;color:#2563eb}
+.nav a{margin-left:18px;font-weight:600;cursor:pointer}
+
+/* TICKER */
+.ticker{background:#0f172a;color:#fff;overflow:hidden;white-space:nowrap;font-size:14px}
+.ticker span{display:inline-block;padding-left:100%;animation:ticker 22s linear infinite}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+/* HERO */
+.hero{text-align:center;padding:100px 20px;color:#fff}
+.hero h1{font-size:50px;margin-bottom:10px}
+.hero p{font-size:20px}
+
+/* TOOLS */
+.tools{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:50px;
+margin-top:80px
+}
+.tool-card{
+background:#ffffffee;
+border-radius:30px;
+padding:90px 40px;
+text-align:center;
+box-shadow:0 25px 55px rgba(0,0,0,.2)
+}
+.tool-card h3{font-size:30px;margin-bottom:30px}
+.tool-card button{padding:16px 45px;font-size:17px}
+
+/* TOOL PAGE */
+.tool-page{
+max-width:900px;
+margin:90px auto;
+background:#fff;
+padding:60px;
+border-radius:28px;
+box-shadow:0 25px 55px rgba(0,0,0,.25)
+}
+
+/* FORMS */
+input,textarea,button{
+width:100%;
+padding:15px;
+margin-bottom:14px;
+border-radius:14px;
+border:1px solid #cbd5e1
+}
+button{
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:#fff;
+font-weight:600;
+cursor:pointer
+}
+
+/* ADS */
+.ad-box{
+background:#f1f5f9;
+border:2px dashed #cbd5e1;
+padding:25px;
+border-radius:18px;
+text-align:center;
+margin:70px 0
+}
+
+/* SPA */
+.page{display:none}
+.page.active{display:block}
+
+/* FOOTER */
+footer{background:#000;color:#fff;padding:45px;margin-top:120px;text-align:center}
+
+/* DARK MODE */
+body.dark{background:#020617;color:#e5e7eb}
+body.dark header,
+body.dark .tool-card,
+body.dark .tool-page{background:#020617;color:#e5e7eb}
+
+/* MOBILE */
+@media(max-width:900px){
+.tools{grid-template-columns:1fr}
+.hero h1{font-size:36px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">ToolsHub</div>
+<div>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('contact')">Contact</a>
+<a onclick="showPage('privacy')">Privacy</a>
+<a onclick="showPage('terms')">Terms</a>
+<button onclick="toggleDark()">🌙</button>
+</div>
+</div>
+</header>
+
+<div class="ticker">
+<span>🚀 Free Online Tools • Image • PDF • Text • No Signup • No Upload • Secure • ToolsHub 🚀</span>
+</div>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="page active">
+
+<section class="hero">
+<h1>All-in-One Free Online Tools</h1>
+<p>Fast • Secure • Professional • Browser Based</p>
+</section>
+
+<div class="container ad-box">AdSense / RevBid Top Ad</div>
+
+<div class="container tools">
+
+<!-- 16 BIG TOOL CARDS -->
+<div class="tool-card"><h3>📝 Word Counter</h3><button onclick="openTool('word')">Open Tool</button></div>
+<div class="tool-card"><h3>📊 Character Counter</h3><button onclick="openTool('char')">Open Tool</button></div>
+<div class="tool-card"><h3>🔤 Text Case Converter</h3><button onclick="openTool('case')">Open Tool</button></div>
+<div class="tool-card"><h3>🔁 Text Reverser</h3><button onclick="openTool('reverse')">Open Tool</button></div>
+<div class="tool-card"><h3>🔐 Password Generator</h3><button onclick="openTool('pass')">Open Tool</button></div>
+<div class="tool-card"><h3>🎂 Age Calculator</h3><button onclick="openTool('age')">Open Tool</button></div>
+<div class="tool-card"><h3>🧹 Remove Extra Spaces</h3><button onclick="openTool('space')">Open Tool</button></div>
+<div class="tool-card"><h3>🔐 Base64 Encoder</h3><button onclick="openTool('b64')">Open Tool</button></div>
+<div class="tool-card"><h3>📅 Date Difference</h3><button onclick="openTool('date')">Open Tool</button></div>
+<div class="tool-card"><h3>🧮 Random Number</h3><button onclick="openTool('rand')">Open Tool</button></div>
+<div class="tool-card"><h3>💬 Random Quote</h3><button onclick="openTool('quote')">Open Tool</button></div>
+<div class="tool-card"><h3>📏 Percentage Calculator</h3><button onclick="openTool('percent')">Open Tool</button></div>
+<div class="tool-card"><h3>🕒 Current Time</h3><button onclick="openTool('time')">Open Tool</button></div>
+<div class="tool-card"><h3>📐 Simple Calculator</h3><button onclick="openTool('calc')">Open Tool</button></div>
+<div class="tool-card"><h3>🔢 Number Counter</h3><button onclick="openTool('num')">Open Tool</button></div>
+<div class="tool-card"><h3>🧠 Text Length Checker</h3><button onclick="openTool('len')">Open Tool</button></div>
+
+</div>
+
+<div class="container ad-box">RevBid In-Content Ad</div>
+</section>
+
+<!-- ================= TOOL PAGES ================= -->
+
+<section id="word" class="page tool-page">
+<h2>Word Counter</h2>
+<textarea oninput="wc.innerText='Words: '+this.value.trim().split(/\s+/).filter(Boolean).length"></textarea>
+<p id="wc">Words: 0</p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="char" class="page tool-page">
+<h2>Character Counter</h2>
+<textarea oninput="cc.innerText='Characters: '+this.value.length"></textarea>
+<p id="cc">Characters: 0</p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="case" class="page tool-page">
+<h2>Text Case Converter</h2>
+<textarea id="ct"></textarea>
+<button onclick="ct.value=ct.value.toUpperCase()">UPPERCASE</button>
+<button onclick="ct.value=ct.value.toLowerCase()">lowercase</button>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="reverse" class="page tool-page">
+<h2>Text Reverser</h2>
+<textarea id="rt"></textarea>
+<button onclick="rt.value=rt.value.split('').reverse().join('')">Reverse</button>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="pass" class="page tool-page">
+<h2>Password Generator</h2>
+<button onclick="po.innerText=Math.random().toString(36).slice(-12)">Generate</button>
+<p id="po"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="age" class="page tool-page">
+<h2>Age Calculator</h2>
+<input type="date" id="dob">
+<button onclick="ao.innerText='Age: '+(new Date().getFullYear()-new Date(dob.value).getFullYear())">Calculate</button>
+<p id="ao"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="space" class="page tool-page">
+<h2>Remove Extra Spaces</h2>
+<textarea id="sp"></textarea>
+<button onclick="sp.value=sp.value.replace(/\s+/g,' ').trim()">Clean</button>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="b64" class="page tool-page">
+<h2>Base64 Encoder / Decoder</h2>
+<textarea id="b"></textarea>
+<button onclick="b.value=btoa(b.value)">Encode</button>
+<button onclick="b.value=atob(b.value)">Decode</button>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="date" class="page tool-page">
+<h2>Date Difference</h2>
+<input type="date" id="d1"><input type="date" id="d2">
+<button onclick="dd.innerText='Days: '+Math.abs((new Date(d2.value)-new Date(d1.value))/86400000)">Calculate</button>
+<p id="dd"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="rand" class="page tool-page">
+<h2>Random Number Generator</h2>
+<button onclick="rn.innerText=Math.floor(Math.random()*1000)">Generate</button>
+<p id="rn"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="quote" class="page tool-page">
+<h2>Random Quote Generator</h2>
+<button onclick="qt.innerText=quotes[Math.floor(Math.random()*quotes.length)]">Generate</button>
+<p id="qt"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="percent" class="page tool-page">
+<h2>Percentage Calculator</h2>
+<input id="p1" placeholder="Value">
+<input id="p2" placeholder="Total">
+<button onclick="per.innerText='Result: '+((p1.value/p2.value)*100).toFixed(2)+'%'">Calculate</button>
+<p id="per"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="time" class="page tool-page">
+<h2>Current Time</h2>
+<button onclick="to.innerText=new Date().toLocaleTimeString()">Show Time</button>
+<p id="to"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="calc" class="page tool-page">
+<h2>Simple Calculator</h2>
+<input id="exp" placeholder="e.g. 5+3*2">
+<button onclick="co.innerText='Result: '+eval(exp.value)">Calculate</button>
+<p id="co"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="num" class="page tool-page">
+<h2>Number Counter</h2>
+<input id="n">
+<button onclick="no.innerText='Digits: '+n.value.length">Count</button>
+<p id="no"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<section id="len" class="page tool-page">
+<h2>Text Length Checker</h2>
+<textarea oninput="lo.innerText='Length: '+this.value.length"></textarea>
+<p id="lo"></p>
+<button onclick="showPage('home')">⬅ Back</button>
+</section>
+
+<!-- ================= INFO PAGES ================= -->
+
+<section id="about" class="page tool-page">
+<h2>About ToolsHub</h2>
+<p>
+ToolsHub is a free online tools platform designed to help users perform everyday
+digital tasks quickly and securely. We provide browser-based utilities for text,
+calculations, and data processing without requiring software installation.
+</p>
+<p>
+Our tools run entirely within your browser. This ensures your data remains private
+and never leaves your device. ToolsHub is built for students, professionals,
+developers, and everyday users worldwide.
+</p>
+</section>
+
+<section id="privacy" class="page tool-page">
+<h2>Privacy Policy</h2>
+<p>
+ToolsHub respects user privacy. We do not collect, store or upload your files or
+personal data. All processing occurs locally in your browser.
+</p>
+<p>
+We may use cookies for analytics and advertising services such as Google AdSense
+and RevBid. These services may use cookies to display relevant ads.
+</p>
+<p>
+By using ToolsHub, you agree to this privacy policy.
+</p>
+</section>
+
+<section id="terms" class="page tool-page">
+<h2>Terms & Conditions</h2>
+<p>
+All tools on ToolsHub are provided “as is” without warranties. While we aim for
+accuracy, we do not guarantee results.
+</p>
+<p>
+Users are responsible for how they use the tools. ToolsHub shall not be held liable
+for any data loss or damages resulting from tool usage.
+</p>
+</section>
+
+<section id="contact" class="page tool-page">
+<h2>Contact Us</h2>
+<form action="https://formsubmit.co/azaanbk29@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="text" name="name" required placeholder="Your Name">
+<input type="email" name="email" required placeholder="Your Email">
+<textarea name="message" required placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+<p style="margin-top:20px">
+📧 azaanbk29@gmail.com<br>
+📞 +92-370-5840165
+</p>
+</section>
+
+<footer>
+© 2026 ToolsHub – Free Online Tools Platform
+</footer>
+
+<script>
+const quotes=[
+"Success is not final, failure is not fatal.",
+"Dream big and dare to fail.",
+"Consistency beats talent.",
+"Stay hungry, stay foolish."
+];
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
+}
+function openTool(id){showPage(id)}
+function toggleDark(){
+document.body.classList.toggle("dark");
+localStorage.setItem("dark",document.body.classList.contains("dark"));
+}
+if(localStorage.getItem("dark")==="true") document.body.classList.add("dark");
+</script>
+
+</body>
+</html>
