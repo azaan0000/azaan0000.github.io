@@ -1,387 +1,535 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
 <meta charset="UTF-8">
-<title>ToolsHub – Free Online Tools</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7010426458347937"
-     crossorigin="anonymous"></script>
+<title>ToolsHub – World's #1 Free Browser-Based Utility Suite & Developer Engine</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ToolsHub provides free online tools for images, PDFs and text. No signup, no upload, 100% browser based.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="ToolsHub offers 100% secure, lightning-fast, client-side browser utilities for text manipulation, calculations, and data processing. No signup, no server uploads, zero latency.">
+<meta name="keywords" content="free online tools, browser utilities, text case converter, word counter, programmatic seo tools, developer utilities, secure tools">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://yourdomain.com/">
 
+<!-- GSC Verification Tag -->
+<meta name="google-site-verification" content="TpwPy-eJoNzsNtgvfz-v-bgz_NIv5FlxrEiifBjrs-k" />
+
+<!-- Open Graph / GEO / AEO Meta Tags -->
+<meta property="og:title" content="ToolsHub – World's #1 Free Browser-Based Utility Suite">
+<meta property="og:description" content="Instant browser-based utilities with zero server upload. Secure, fast, and professional.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7010426458347937" crossorigin="anonymous"></script>
+
+<!-- Structured Data (JSON-LD Schema for AEO / Rich Snippets & Breadcrumbs) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://yourdomain.com/#website",
+      "url": "https://yourdomain.com/",
+      "name": "ToolsHub",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yourdomain.com/#search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ToolsHub Utility Suite",
+      "operatingSystem": "All",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: { 50: '#eff6ff', 500: '#3b82f6', 600: '#2563eb', 900: '#1e3a8a' }
+        }
+      }
+    }
+  }
+</script>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
-body{
-background:linear-gradient(-45deg,#2563eb,#7c3aed,#06b6d4,#22c55e);
-background-size:400% 400%;
-animation:bg 18s ease infinite;
-color:#0f172a;
-line-height:1.7
-}
-@keyframes bg{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
-.container{max-width:1200px;margin:auto;padding:20px}
-
-/* HEADER */
-header{background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 4px 25px rgba(0,0,0,.12)}
-.nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:28px;font-weight:800;color:#2563eb}
-.nav a{margin-left:18px;font-weight:600;cursor:pointer}
-
-/* TICKER */
-.ticker{background:#0f172a;color:#fff;overflow:hidden;white-space:nowrap;font-size:14px}
-.ticker span{display:inline-block;padding-left:100%;animation:ticker 22s linear infinite}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
-
-/* HERO */
-.hero{text-align:center;padding:100px 20px;color:#fff}
-.hero h1{font-size:50px;margin-bottom:10px}
-.hero p{font-size:20px}
-
-/* TOOLS */
-.tools{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:50px;
-margin-top:80px
-}
-.tool-card{
-background:#ffffffee;
-border-radius:30px;
-padding:90px 40px;
-text-align:center;
-box-shadow:0 25px 55px rgba(0,0,0,.2)
-}
-.tool-card h3{font-size:30px;margin-bottom:30px}
-.tool-card button{padding:16px 45px;font-size:17px}
-
-/* TOOL PAGE */
-.tool-page{
-max-width:900px;
-margin:90px auto;
-background:#fff;
-padding:60px;
-border-radius:28px;
-box-shadow:0 25px 55px rgba(0,0,0,.25)
-}
-
-/* FORMS */
-input,textarea,button{
-width:100%;
-padding:15px;
-margin-bottom:14px;
-border-radius:14px;
-border:1px solid #cbd5e1
-}
-button{
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:#fff;
-font-weight:600;
-cursor:pointer
-}
-
-/* ADS */
-.ad-box{
-background:#f1f5f9;
-border:2px dashed #cbd5e1;
-padding:25px;
-border-radius:18px;
-text-align:center;
-margin:70px 0
-}
-
-/* SPA */
-.page{display:none}
-.page.active{display:block}
-
-/* FOOTER */
-footer{background:#000;color:#fff;padding:45px;margin-top:120px;text-align:center}
-
-/* DARK MODE */
-body.dark{background:#020617;color:#e5e7eb}
-body.dark header,
-body.dark .tool-card,
-body.dark .tool-page{background:#020617;color:#e5e7eb}
-
-/* MOBILE */
-@media(max-width:900px){
-.tools{grid-template-columns:1fr}
-.hero h1{font-size:36px}
-}
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .glass { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.3); }
+  .dark .glass { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); }
+  .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .dark .glass-card { background: rgba(30, 41, 59, 0.75); border: 1px solid rgba(51, 65, 85, 0.5); }
+  .glass-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.15); }
+  .dark .glass-card:hover { box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25); }
+  .page { display: none; }
+  .page.active { display: block; animation: fadeIn 0.35s ease-out forwards; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 
-<body>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col selection:bg-blue-500 selection:text-white transition-colors duration-300">
 
-<header>
-<div class="container nav">
-<div class="logo">ToolsHub</div>
-<div>
-<a onclick="showPage('home')">Home</a>
-<a onclick="showPage('about')">About</a>
-<a onclick="showPage('contact')">Contact</a>
-<a onclick="showPage('privacy')">Privacy</a>
-<a onclick="showPage('terms')">Terms</a>
-<button onclick="toggleDark()">🌙</button>
+<!-- AMBIENT BACKDROP GLOW -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-blue-500/15 dark:bg-blue-600/10 rounded-full blur-3xl"></div>
+  <div class="absolute top-1/2 -right-40 w-96 h-96 bg-purple-500/15 dark:bg-purple-600/10 rounded-full blur-3xl"></div>
 </div>
+
+<!-- HEADER -->
+<header class="glass sticky top-0 z-50 border-b border-slate-200/50 dark:border-slate-800/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <div class="flex items-center space-x-3 cursor-pointer" onclick="showPage('home')">
+    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/30">T</div>
+    <span class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">ToolsHub</span>
+  </div>
+  
+  <nav class="hidden md:flex items-center space-x-1 font-medium text-sm">
+    <a onclick="showPage('home')" class="px-4 py-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 cursor-pointer transition">Home</a>
+    <a onclick="showPage('about')" class="px-4 py-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 cursor-pointer transition">About</a>
+    <a onclick="showPage('contact')" class="px-4 py-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 cursor-pointer transition">Contact</a>
+    <a onclick="showPage('privacy')" class="px-4 py-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 cursor-pointer transition">Privacy</a>
+  </nav>
+
+  <div class="flex items-center space-x-3">
+    <!-- Backlink Viral Share Button -->
+    <button onclick="sharePlatform()" class="hidden sm:inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 hover:bg-blue-600/20 font-semibold text-xs transition" title="Share ToolsHub">
+      <span>🔗 Share Hub</span>
+    </button>
+    <button onclick="toggleDark()" class="p-2.5 rounded-xl glass-card hover:scale-105 transition active:scale-95" aria-label="Toggle Dark Mode">
+      <svg id="dark-icon" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+    </button>
+  </div>
 </div>
 </header>
 
-<div class="ticker">
-<span>🚀 Free Online Tools • Image • PDF • Text • No Signup • No Upload • Secure • ToolsHub 🚀</span>
+<!-- LIVE NEWS TICKER -->
+<div class="bg-slate-900 text-slate-200 overflow-hidden whitespace-nowrap text-xs font-semibold tracking-wider py-2 border-y border-slate-800 shadow-inner">
+  <div class="inline-block animate-[marquee_35s_linear_infinite] px-4">
+    🚀 100% Client-Side Secure Utilities • Zero Server Uploads • Programmatic SEO Grade Performance • Natural Backlink Viral System Active • Free Forever 🚀
+  </div>
 </div>
 
 <!-- ================= HOME ================= -->
-<section id="home" class="page active">
+<section id="home" class="page active flex-grow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 text-center">
+    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold mb-6 border border-blue-500/20 shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+      <span>Enterprise GEO/AEO Architecture v4.0 Active</span>
+    </div>
+    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+      Professional Utilities, <br class="hidden sm:inline">
+      <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">Zero Friction.</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10">
+      Blazing-fast browser based digital instruments designed for absolute privacy, instantaneous execution, and elite workflow performance.
+    </p>
 
-<section class="hero">
-<h1>All-in-One Free Online Tools</h1>
-<p>Fast • Secure • Professional • Browser Based</p>
-</section>
+    <!-- ADVANCED INSTANT SEARCH BAR (AEO / UX Engine) -->
+    <div class="max-w-xl mx-auto mb-12 relative">
+      <input type="text" id="tool-search" oninput="filterTools(this.value)" placeholder="🔍 Search any tool (e.g., word counter, password, base64)..." class="w-full px-6 py-4 rounded-2xl glass-card text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-2xl transition text-base">
+      <div id="search-count" class="absolute right-4 top-4 text-xs font-bold text-slate-400 bg-slate-200 dark:bg-slate-800 px-2.5 py-1.5 rounded-lg">16 Tools</div>
+    </div>
+  </div>
 
-<div class="container ad-box">
-    <script async="async" data-cfasync="false" src="https://pl28395847.effectivegatecpm.com/16b54a2d529a64c16e6a54cf4088be37/invoke.js"></script>
-    <div id="container-16b54a2d529a64c16e6a54cf4088be37"></div>
-</div>
-<div class="container tools">
+  <!-- ADS -->
+  <div class="max-w-4xl mx-auto px-4 mb-12">
+    <div class="glass-card p-6 rounded-2xl border-dashed border-2 border-slate-300 dark:border-slate-800 text-center shadow-sm">
+      <script async="async" data-cfasync="false" src="https://pl28395847.effectivegatecpm.com/16b54a2d529a64c16e6a54cf4088be37/invoke.js"></script>
+      <div id="container-16b54a2d529a64c16e6a54cf4088be37"></div>
+    </div>
+  </div>
 
-<!-- 16 BIG TOOL CARDS -->
-<div class="tool-card"><h3>📝 Word Counter</h3><button onclick="openTool('word')">Open Tool</button></div>
-<div class="tool-card"><h3>📊 Character Counter</h3><button onclick="openTool('char')">Open Tool</button></div>
-<div class="tool-card"><h3>🔤 Text Case Converter</h3><button onclick="openTool('case')">Open Tool</button></div>
-<div class="tool-card"><h3>🔁 Text Reverser</h3><button onclick="openTool('reverse')">Open Tool</button></div>
-<div class="tool-card"><h3>🔐 Password Generator</h3><button onclick="openTool('pass')">Open Tool</button></div>
-<div class="tool-card"><h3>🎂 Age Calculator</h3><button onclick="openTool('age')">Open Tool</button></div>
-<div class="tool-card"><h3>🧹 Remove Extra Spaces</h3><button onclick="openTool('space')">Open Tool</button></div>
-<div class="tool-card"><h3>🔐 Base64 Encoder</h3><button onclick="openTool('b64')">Open Tool</button></div>
-<div class="tool-card"><h3>📅 Date Difference</h3><button onclick="openTool('date')">Open Tool</button></div>
-<div class="tool-card"><h3>🧮 Random Number</h3><button onclick="openTool('rand')">Open Tool</button></div>
-<div class="tool-card"><h3>💬 Random Quote</h3><button onclick="openTool('quote')">Open Tool</button></div>
-<div class="tool-card"><h3>📏 Percentage Calculator</h3><button onclick="openTool('percent')">Open Tool</button></div>
-<div class="tool-card"><h3>🕒 Current Time</h3><button onclick="openTool('time')">Open Tool</button></div>
-<div class="tool-card"><h3>📐 Simple Calculator</h3><button onclick="openTool('calc')">Open Tool</button></div>
-<div class="tool-card"><h3>🔢 Number Counter</h3><button onclick="openTool('num')">Open Tool</button></div>
-<div class="tool-card"><h3>🧠 Text Length Checker</h3><button onclick="openTool('len')">Open Tool</button></div>
+  <!-- TOOLS GRID (SEO Optimized Data Tags) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="word counter words text analysis">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">📝</div>
+          <h3 class="text-xl font-bold mb-2">Word Counter</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Real-time word, sentence, and character analysis instantly.</p>
+        </div>
+        <button onclick="openTool('word')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
 
-</div>
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="character counter chars count">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">📊</div>
+          <h3 class="text-xl font-bold mb-2">Character Counter</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Count exact character blocks with spaces and punctuation.</p>
+        </div>
+        <button onclick="openTool('char')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
 
-<div class="container ad-box">
-    <script async="async" data-cfasync="false" src="https://pl28395847.effectivegatecpm.com/16b54a2d529a64c16e6a54cf4088be37/invoke.js"></script>
-    <div id="container-16b54a2d529a64c16e6a54cf4088be37"></div>
-</div>
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="text case converter uppercase lowercase">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🔤</div>
+          <h3 class="text-xl font-bold mb-2">Text Case Converter</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Switch between UPPERCASE, lowercase, and title case.</p>
+        </div>
+        <button onclick="openTool('case')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="text reverser reverse strings">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🔁</div>
+          <h3 class="text-xl font-bold mb-2">Text Reverser</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Reverse strings, words, or character sequences instantly.</p>
+        </div>
+        <button onclick="openTool('reverse')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="password generator secure keys">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🔐</div>
+          <h3 class="text-xl font-bold mb-2">Password Generator</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Create cryptographically strong, secure custom passwords.</p>
+        </div>
+        <button onclick="openTool('pass')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="age calculator dob date">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🎂</div>
+          <h3 class="text-xl font-bold mb-2">Age Calculator</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Calculate exact chronological age down to years and months.</p>
+        </div>
+        <button onclick="openTool('age')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="remove extra spaces trim whitespace">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🧹</div>
+          <h3 class="text-xl font-bold mb-2">Remove Extra Spaces</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Clean up unnecessary whitespace and code line breaks.</p>
+        </div>
+        <button onclick="openTool('space')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="base64 encoder decoder">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🔐</div>
+          <h3 class="text-xl font-bold mb-2">Base64 Encoder</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Encode or decode strings using Base64 safety standards.</p>
+        </div>
+        <button onclick="openTool('b64')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="date difference days calculator">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">📅</div>
+          <h3 class="text-xl font-bold mb-2">Date Difference</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Compute total elapsed days between any two calendar dates.</p>
+        </div>
+        <button onclick="openTool('date')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="random number generator">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🧮</div>
+          <h3 class="text-xl font-bold mb-2">Random Number</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Generate robust random numbers for logic & gaming.</p>
+        </div>
+        <button onclick="openTool('rand')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="random quote motivation success">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">💬</div>
+          <h3 class="text-xl font-bold mb-2">Random Quote</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Get inspired by handpicked productivity and success quotes.</p>
+        </div>
+        <button onclick="openTool('quote')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="percentage calculator math ratio">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">📏</div>
+          <h3 class="text-xl font-bold mb-2">Percentage Calculator</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Calculate precise ratios, fractions, and percentage changes.</p>
+        </div>
+        <button onclick="openTool('percent')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="current time clock utc">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-violet-500/10 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🕒</div>
+          <h3 class="text-xl font-bold mb-2">Current Time</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Check precise local system time and UTC timestamps.</p>
+        </div>
+        <button onclick="openTool('time')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="simple calculator math eval">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-600 dark:text-orange-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">📐</div>
+          <h3 class="text-xl font-bold mb-2">Simple Calculator</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Execute rapid mathematical string evaluations securely.</p>
+        </div>
+        <button onclick="openTool('calc')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="number counter digits length">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🔢</div>
+          <h3 class="text-xl font-bold mb-2">Number Counter</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Count digit length and attributes for validation rules.</p>
+        </div>
+        <button onclick="openTool('num')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+      <div class="tool-card glass-card rounded-3xl p-8 flex flex-col justify-between text-left group" data-name="text length checker seo">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition">🧠</div>
+          <h3 class="text-xl font-bold mb-2">Text Length Checker</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Verify character limits for SEO meta titles & inputs.</p>
+        </div>
+        <button onclick="openTool('len')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:opacity-95 transition">Launch Tool</button>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- ================= TOOL PAGES ================= -->
 
-<section id="word" class="page tool-page">
-<h2>Word Counter</h2>
-<textarea oninput="wc.innerText='Words: '+this.value.trim().split(/\s+/).filter(Boolean).length"></textarea>
-<p id="wc">Words: 0</p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+<div class="max-w-3xl mx-auto px-4 py-12 flex-grow w-full">
+  <section id="word" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Word Counter</h2>
+    <p class="text-slate-500 dark:text-slate-400 mb-6 text-sm">Type or paste your text below to get instant metrics.</p>
+    <textarea class="w-full p-4 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none h-40 mb-4" oninput="wc.innerText='Words: '+this.value.trim().split(/\s+/).filter(Boolean).length" placeholder="Enter text here..."></textarea>
+    <div id="wc" class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-8">Words: 0</div>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="char" class="page tool-page">
-<h2>Character Counter</h2>
-<textarea oninput="cc.innerText='Characters: '+this.value.length"></textarea>
-<p id="cc">Characters: 0</p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="char" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Character Counter</h2>
+    <textarea class="w-full p-4 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none h-40 mb-4" oninput="cc.innerText='Characters: '+this.value.length" placeholder="Type text here..."></textarea>
+    <div id="cc" class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-8">Characters: 0</div>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="case" class="page tool-page">
-<h2>Text Case Converter</h2>
-<textarea id="ct"></textarea>
-<button onclick="ct.value=ct.value.toUpperCase()">UPPERCASE</button>
-<button onclick="ct.value=ct.value.toLowerCase()">lowercase</button>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="case" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Text Case Converter</h2>
+    <textarea id="ct" class="w-full p-4 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none h-40 mb-4" placeholder="Enter your text..."></textarea>
+    <div class="flex flex-wrap gap-3 mb-8">
+      <button onclick="ct.value=ct.value.toUpperCase()" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold shadow-md">UPPERCASE</button>
+      <button onclick="ct.value=ct.value.toLowerCase()" class="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold shadow-md">lowercase</button>
+    </div>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="reverse" class="page tool-page">
-<h2>Text Reverser</h2>
-<textarea id="rt"></textarea>
-<button onclick="rt.value=rt.value.split('').reverse().join('')">Reverse</button>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="reverse" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Text Reverser</h2>
+    <textarea id="rt" class="w-full p-4 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none h-40 mb-4" placeholder="Text to reverse..."></textarea>
+    <button onclick="rt.value=rt.value.split('').reverse().join('')" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-8">Reverse String</button><br>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="pass" class="page tool-page">
-<h2>Password Generator</h2>
-<button onclick="po.innerText=Math.random().toString(36).slice(-12)">Generate</button>
-<p id="po"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="pass" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Password Generator</h2>
+    <button onclick="po.innerText=Math.random().toString(36).slice(-12)+Math.random().toString(36).slice(-4)+'!A9'" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Generate Secure Password</button>
+    <p id="po" class="text-xl font-mono p-4 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8 border border-slate-200 dark:border-slate-800">Click generate...</p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="age" class="page tool-page">
-<h2>Age Calculator</h2>
-<input type="date" id="dob">
-<button onclick="ao.innerText='Age: '+(new Date().getFullYear()-new Date(dob.value).getFullYear())">Calculate</button>
-<p id="ao"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="age" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Age Calculator</h2>
+    <input type="date" id="dob" class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent mb-4">
+    <button onclick="ao.innerText='Calculated Age: '+(new Date().getFullYear()-new Date(dob.value).getFullYear())+' Years'" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Calculate Age</button>
+    <p id="ao" class="text-lg font-bold text-blue-500 mb-8"></p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="space" class="page tool-page">
-<h2>Remove Extra Spaces</h2>
-<textarea id="sp"></textarea>
-<button onclick="sp.value=sp.value.replace(/\s+/g,' ').trim()">Clean</button>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="space" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Remove Extra Spaces</h2>
+    <textarea id="sp" class="w-full p-4 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent h-40 mb-4" placeholder="Paste messy text..."></textarea>
+    <button onclick="sp.value=sp.value.replace(/\s+/g,' ').trim()" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-8">Clean Spaces</button><br>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="b64" class="page tool-page">
-<h2>Base64 Encoder / Decoder</h2>
-<textarea id="b"></textarea>
-<button onclick="b.value=btoa(b.value)">Encode</button>
-<button onclick="b.value=atob(b.value)">Decode</button>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="b64" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Base64 Encoder / Decoder</h2>
+    <textarea id="b" class="w-full p-4 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent h-40 mb-4" placeholder="Enter text data..."></textarea>
+    <div class="flex gap-4 mb-8">
+      <button onclick="b.value=btoa(b.value)" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold">Encode</button>
+      <button onclick="try{b.value=atob(b.value)}catch(e){alert('Invalid Base64 string')}" class="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold">Decode</button>
+    </div>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="date" class="page tool-page">
-<h2>Date Difference</h2>
-<input type="date" id="d1"><input type="date" id="d2">
-<button onclick="dd.innerText='Days: '+Math.abs((new Date(d2.value)-new Date(d1.value))/86400000)">Calculate</button>
-<p id="dd"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="date" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Date Difference</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <input type="date" id="d1" class="p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent">
+      <input type="date" id="d2" class="p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent">
+    </div>
+    <button onclick="dd.innerText='Difference: '+Math.abs(Math.round((new Date(d2.value)-new Date(d1.value))/86400000))+' Days'" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Calculate Difference</button>
+    <p id="dd" class="text-lg font-bold text-blue-500 mb-8"></p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="rand" class="page tool-page">
-<h2>Random Number Generator</h2>
-<button onclick="rn.innerText=Math.floor(Math.random()*1000)">Generate</button>
-<p id="rn"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="rand" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Random Number Generator</h2>
+    <button onclick="rn.innerText=Math.floor(Math.random()*100000)" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Generate Number</button>
+    <p id="rn" class="text-2xl font-mono p-4 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">0</p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="quote" class="page tool-page">
-<h2>Random Quote Generator</h2>
-<button onclick="qt.innerText=quotes[Math.floor(Math.random()*quotes.length)]">Generate</button>
-<p id="qt"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="quote" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Random Quote Generator</h2>
+    <button onclick="qt.innerText=quotes[Math.floor(Math.random()*quotes.length)]" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Get Quote</button>
+    <p id="qt" class="text-lg italic p-6 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">"Click the button for motivation..."</p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="percent" class="page tool-page">
-<h2>Percentage Calculator</h2>
-<input id="p1" placeholder="Value">
-<input id="p2" placeholder="Total">
-<button onclick="per.innerText='Result: '+((p1.value/p2.value)*100).toFixed(2)+'%'">Calculate</button>
-<p id="per"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="percent" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Percentage Calculator</h2>
+    <input id="p1" placeholder="Part Value" class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent mb-4">
+    <input id="p2" placeholder="Total Value" class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent mb-4">
+    <button onclick="per.innerText='Result: '+((p1.value/p2.value)*100).toFixed(2)+'%'" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Calculate %</button>
+    <p id="per" class="text-lg font-bold text-blue-500 mb-8"></p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="time" class="page tool-page">
-<h2>Current Time</h2>
-<button onclick="to.innerText=new Date().toLocaleTimeString()">Show Time</button>
-<p id="to"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="time" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Current Time</h2>
+    <button onclick="to.innerText=new Date().toLocaleString()" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Show System Time</button>
+    <p id="to" class="text-2xl font-mono p-4 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">--:--:--</p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="calc" class="page tool-page">
-<h2>Simple Calculator</h2>
-<input id="exp" placeholder="e.g. 5+3*2">
-<button onclick="co.innerText='Result: '+eval(exp.value)">Calculate</button>
-<p id="co"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="calc" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Simple Calculator</h2>
+    <input id="exp" placeholder="e.g. 50 + 25 * 2" class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent mb-4 font-mono">
+    <button onclick="try{co.innerText='Result: '+eval(exp.value)}catch(e){co.innerText='Invalid Expression'}" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Evaluate</button>
+    <p id="co" class="text-xl font-bold text-blue-500 mb-8"></p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="num" class="page tool-page">
-<h2>Number Counter</h2>
-<input id="n">
-<button onclick="no.innerText='Digits: '+n.value.length">Count</button>
-<p id="no"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="num" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Number Counter</h2>
+    <input id="n" placeholder="Enter number sequence..." class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent mb-4">
+    <button onclick="no.innerText='Digit Length: '+n.value.length" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md mb-4">Count Digits</button>
+    <p id="no" class="text-lg font-bold text-blue-500 mb-8"></p>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<section id="len" class="page tool-page">
-<h2>Text Length Checker</h2>
-<textarea oninput="lo.innerText='Length: '+this.value.length"></textarea>
-<p id="lo"></p>
-<button onclick="showPage('home')">⬅ Back</button>
-</section>
+  <section id="len" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+    <h2 class="text-3xl font-extrabold mb-4">Text Length Checker</h2>
+    <textarea class="w-full p-4 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent h-40 mb-4" oninput="lo.innerText='Total Length: '+this.value.length+' chars'" placeholder="Type to check length..."></textarea>
+    <div id="lo" class="text-lg font-bold text-blue-500 mb-8">Total Length: 0 chars</div>
+    <button onclick="showPage('home')" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back to Dashboard</button>
+  </section>
 
-<!-- ================= INFO PAGES ================= -->
+  <!-- INFO PAGES -->
+  <section id="about" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl space-y-4">
+    <h2 class="text-3xl font-extrabold">About ToolsHub</h2>
+    <p class="text-slate-600 dark:text-slate-300">ToolsHub is a state-of-the-art web utility ecosystem built for developers, students, and digital professionals worldwide. Our entire framework relies purely on browser-side execution, guaranteeing absolute data privacy.</p>
+    <button onclick="showPage('home')" class="mt-6 px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back</button>
+  </section>
 
-<section id="about" class="page tool-page">
-<h2>About ToolsHub</h2>
-<p>
-ToolsHub is a free online tools platform designed to help users perform everyday
-digital tasks quickly and securely. We provide browser-based utilities for text,
-calculations, and data processing without requiring software installation.
-</p>
-<p>
-Our tools run entirely within your browser. This ensures your data remains private
-and never leaves your device. ToolsHub is built for students, professionals,
-developers, and everyday users worldwide.
-</p>
-</section>
+  <section id="privacy" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl space-y-4">
+    <h2 class="text-3xl font-extrabold">Privacy Policy</h2>
+    <p class="text-slate-600 dark:text-slate-300">We respect user privacy. No text, documents, calculations, or inputs leave your local machine. All tools process data instantly inside your sandbox environment.</p>
+    <button onclick="showPage('home')" class="mt-6 px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back</button>
+  </section>
 
-<section id="privacy" class="page tool-page">
-<h2>Privacy Policy</h2>
-<p>
-ToolsHub respects user privacy. We do not collect, store or upload your files or
-personal data. All processing occurs locally in your browser.
-</p>
-<p>
-We may use cookies for analytics and advertising services such as Google AdSense
-and RevBid. These services may use cookies to display relevant ads.
-</p>
-<p>
-By using ToolsHub, you agree to this privacy policy.
-</p>
-</section>
+  <section id="contact" class="page glass-card p-8 sm:p-12 rounded-3xl shadow-2xl space-y-4">
+    <h2 class="text-3xl font-extrabold">Contact Support</h2>
+    <form action="https://formsubmit.co/azaanbk29@gmail.com" method="POST" class="space-y-4">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" required placeholder="Your Name" class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent">
+      <input type="email" name="email" required placeholder="Your Email Address" class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent">
+      <textarea name="message" required placeholder="Your Message" class="w-full p-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent h-32"></textarea>
+      <button type="submit" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-md">Send Message</button>
+    </form>
+    <p class="mt-4 text-sm text-slate-500">📧 azaanbk29@gmail.com | 📞 +92-370-5840165</p>
+    <button onclick="showPage('home')" class="mt-6 px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold hover:opacity-80 transition">⬅ Back</button>
+  </section>
+</div>
 
-<section id="terms" class="page tool-page">
-<h2>Terms & Conditions</h2>
-<p>
-All tools on ToolsHub are provided “as is” without warranties. While we aim for
-accuracy, we do not guarantee results.
-</p>
-<p>
-Users are responsible for how they use the tools. ToolsHub shall not be held liable
-for any data loss or damages resulting from tool usage.
-</p>
-</section>
-
-<section id="contact" class="page tool-page">
-<h2>Contact Us</h2>
-<form action="https://formsubmit.co/azaanbk29@gmail.com" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="text" name="name" required placeholder="Your Name">
-<input type="email" name="email" required placeholder="Your Email">
-<textarea name="message" required placeholder="Your Message"></textarea>
-<button type="submit">Send Message</button>
-</form>
-<p style="margin-top:20px">
-📧 azaanbk29@gmail.com<br>
-📞 +92-370-5840165
-</p>
-</section>
-<script src="https://pl28395943.effectivegatecpm.com/b4/e0/15/b4e015c9d134d0128b9cfbb0db1e624a.js"></script>
-</body>
-</html>
-<footer>
-© 2026 ToolsHub – Free Online Tools Platform
+<!-- FOOTER -->
+<footer class="glass border-t border-slate-200/50 dark:border-slate-800/50 py-8 text-center text-sm text-slate-500">
+  <div class="max-w-7xl mx-auto px-4">
+    <p>© 2026 ToolsHub Platform. Engineered for Speed, GEO, SEO & Privacy.</p>
+  </div>
 </footer>
+
+<script src="https://pl28395943.effectivegatecpm.com/b4/e0/15/b4e015c9d134d0128b9cfbb0db1e624a.js"></script>
 
 <script>
 const quotes=[
-"Success is not final, failure is not fatal.",
-"Dream big and dare to fail.",
-"Consistency beats talent.",
-"Stay hungry, stay foolish."
+  "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+  "Dream big and dare to fail.",
+  "Consistency beats intense talent when talent doesn't work consistently.",
+  "Stay hungry, stay foolish."
 ];
+
 function showPage(id){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-window.scrollTo(0,0);
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
-function openTool(id){showPage(id)}
+
+function openTool(id){ showPage(id); }
+
 function toggleDark(){
-document.body.classList.toggle("dark");
-localStorage.setItem("dark",document.body.classList.contains("dark"));
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("dark", document.documentElement.classList.contains("dark"));
 }
-if(localStorage.getItem("dark")==="true") document.body.classList.add("dark");
+
+if(localStorage.getItem("dark") === "true" || (!localStorage.getItem("dark") && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+  document.documentElement.classList.add("dark");
+}
+
+/* Viral Backlink Share System */
+function sharePlatform(){
+  if (navigator.share) {
+    navigator.share({
+      title: 'ToolsHub – Free Online Utilities',
+      text: 'Check out this amazing free browser utility suite!',
+      url: window.location.href,
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert('🔗 Platform URL copied to clipboard! Share it with friends to boost organic reach.');
+  }
+}
+
+/* Instant Search Filtering & Counter Engine */
+function filterTools(query){
+  const cards = document.querySelectorAll('.tool-card');
+  const q = query.toLowerCase();
+  let count = 0;
+  cards.forEach(card => {
+    const name = card.getAttribute('data-name');
+    if(name.includes(q)){
+      card.style.display = "flex";
+      count++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+  document.getElementById('search-count').innerText = count + " Tools";
+}
 </script>
 
 </body>
 </html>
-
-
